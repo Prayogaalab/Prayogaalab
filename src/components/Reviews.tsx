@@ -27,7 +27,7 @@ const Reviews = () => {
       name: 'Priya Patel',
       role: 'Recent Graduate',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2061',
-      review: 'I enrolled in the robotics course right after completing my bachelor's degree. The lab experience was invaluable, and the mentorship from the instructors helped me secure my dream job at a tech startup.',
+      review: "I enrolled in the robotics course right after completing my bachelor's degree. The lab experience was invaluable, and the mentorship from the instructors helped me secure my dream job at a tech startup.",
       rating: 4,
     },
   ];
