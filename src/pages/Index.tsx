@@ -1,12 +1,49 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import Banner from '@/components/Banner';
+import About from '@/components/About';
+import WhyUs from '@/components/WhyUs';
+import Team from '@/components/Team';
+import Courses from '@/components/Courses';
+import Contact from '@/components/Contact';
+import Reviews from '@/components/Reviews';
+import Gallery from '@/components/Gallery';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  // This effect ensures smooth scrolling for navigation links
+  useEffect(() => {
+    const handleScrollToAnchor = (e: MouseEvent) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.hash && target.hash.startsWith('#')) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY - 100,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleScrollToAnchor);
+    return () => document.removeEventListener('click', handleScrollToAnchor);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <Banner />
+      <About />
+      <WhyUs />
+      <Team />
+      <Courses />
+      <Reviews />
+      <Gallery />
+      <Contact />
+      <Footer />
     </div>
   );
 };
